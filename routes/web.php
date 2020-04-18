@@ -34,37 +34,37 @@ Route::group(['prefix' => 'admin'], function() {
     Route::get('', [
         'uses' => 'PostController@getAdminIndex',
         'as' => 'admin.index',
-        'middleware '= >[' auth ']
+        'middleware'=>['auth']
     ]);
 
     Route::get('create', [
         'uses' => 'PostController@getAdminCreate',
         'as' => 'admin.create',
-        'middleware '= >[' auth ']
+        'middleware'=>['auth']
     ]);
 
     Route::post('create', [
         'uses' => 'PostController@postAdminCreate',
         'as' => 'admin.create',
-        'middleware '= >[' auth ']
+        'middleware'=>['auth']
     ]);
 
     Route::get('edit/{id}', [
         'uses' => 'PostController@getAdminEdit',
         'as' => 'admin.edit',
-        'middleware '= >[' auth ']
+        'middleware'=> ['auth']
     ]);
 
     Route::get('delete/{id}', [
         'uses' => 'PostController@getAdminDelete',
         'as' => 'admin.delete',
-        'middleware '= >[' auth ']
+        'middleware'=>['auth']
     ]);
 
     Route::post('edit', [
         'uses' => 'PostController@postAdminUpdate',
         'as' => 'admin.update',
-        'middleware '= >[' auth ']
+        'middleware'=>['auth']
     ]);
 });
 Auth::routes();
